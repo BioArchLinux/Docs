@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>BioArchLInux Documents</title>
+
+    <meta
+      name="description"
+      content="Realising, Using, Maintaing BioArchLinux"
+    />
+
+
+    <link rel="shortcut icon" href="./arch.png" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"
+    />
+    <style>
+      .sidebar {
+        padding: 0 0 0 0;
+      }
+
+      .app-name {
+        padding-top: 10px;
+
+        border-bottom: 4px solid rgb(0, 136, 204);
+        background-color: rgb(51, 51, 51);
+      }
+
+      .app-name-link img {
+        width: 70%;
+      }
+
+      .seo-pic {
+        display: none;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "BioArchLinux Documents",
+        "image": [
+          ""https://BioArchLinux.github.io/Docs/logo.png",
+          ""https://BioArchLinux.github.io/Docs/logo.png",
+          "https://BioArchLinux.github.io/Docs/logo.png"
+        ],
+        "datePublished": "2020-09-01T08:00:00+08:00",
+        "dateModified": "2021-04-03T09:20:00+08:00"
+      }
+    </script>
+  </head>
+  <body>
+    <img src="./logo.png" alt="BioArchLinux Documents" class="seo-pic" />
+    <div id="app">Loading...</div>
+    <script>
+      window.$docsify = {
+        loadNavbar: true,
+        search: {
+          placeholder: 'Search...',
+        },
+        name: 'BioArchLinux Documents',
+        loadSidebar: true,
+        auto2top: true,
+        logo: './arch.svg',
+        topMargin: 90,
+        notFoundPage: true,
+        subMaxLevel: 4,
+        themeColor: 'rgb(23,147,209)',
+        repo: 'https://github.com/BioArchLinux/BioArchLinux_Docs',
+        formatUpdated: '{YYYY}-{MM}-{DD}',
+        pagination: {
+          previousText: 'Previous',
+          nextText: 'Next',
+          crossChapter: true,
+          crossChapterText: true,
+        },
+        plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              var url =
+                'https://github.com/BioArchLinux/BioArchLinux_Docs/blob/master/docs/' +
+                vm.route.file;
+              var editHtml = '[📝 Edit](' + url + ')\n';
+
+              return (
+                '<span>Updated {docsify-updated}</span> ' +
+                '\n' +
+                html +
+                '\n----\n' +
+                editHtml
+              );
+            });
+          },
+        ],
+      };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: 'rgb(23,147,209)',
+        textColor: '#fff',
+      });
+    </script>
+
+    <script>
+      function change_search_plugin_order() {
+        let search_plugin = document.getElementsByClassName('search')[0];
+        let app_name = document.getElementsByClassName('app-name')[0];
+        search_plugin.parentNode.insertBefore(app_name, search_plugin);
+      }
+      setTimeout(change_search_plugin_order, 1);
+    </script>
+  </body>
+</html>
