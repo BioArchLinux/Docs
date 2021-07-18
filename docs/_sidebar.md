@@ -15,6 +15,6 @@
   - [Remain Error](/contribute/ERROR)
 
 - [Todo](todo.md)
-- [贡献文档与代码](contribution.md)
-- [关于](about.md)
-- [致谢](acknowledgements.md)
+- [Contriubtion](contribution.md)
+- [About](about.md)
+- [Acknowledgements](acknowledgements.md)
