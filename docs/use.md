@@ -6,7 +6,7 @@ Add following repository to `/etc/pacman.conf`
 ```
 [BioArchLinux]
 SigLevel = Never
-Server = https://malacology.net/repo/
+Server = https://repo.malacology.net
 ```
 ## Convert your VPS to ArchLinux
 
